@@ -1,1 +1,22 @@
- 
+
+.left-container {
+    display: inline-block;
+    float: left;
+    width: 50%;
+}
+
+.right-container {
+    display: inline-block;
+    float: right;
+    width: 50%;
+}
+
+.left-container > div:not(:last-child) h4, p {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.right-container > div:not(:last-child) h4, p {
+    display: inline-block;
+    margin-right: 10px;
+}
