@@ -3,8 +3,9 @@ from django.db import models
 
 
 class UserData(models.Model):
-    user = models.OneToOneField(User, to_field='id', on_delete=models.CASCADE)
+    username = models.CharField(max_length=100)
     surname = models.CharField(max_length=100)
+    email = models.EmailField()
     bio = models.CharField(max_length=100)
     skype = models.CharField(max_length=100)
     birth_date = models.DateField()

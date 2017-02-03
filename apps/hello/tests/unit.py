@@ -1,6 +1,5 @@
 from django import test
 from django.contrib.auth.models import AnonymousUser
-from django.contrib.auth.models import User
 from django.test.client import RequestFactory
 
 from apps.hello.models import UserData
@@ -10,12 +9,9 @@ from apps.hello.views import HomeView
 class RequestTests(test.TestCase):
     def setUp(self):
         self.factory = RequestFactory()
-        user = User.objects.create_user(username='Borys',
-                                        email='borys.bardysh@synergy-way.com',
-                                        password='11061990')
-
-        UserData.objects.create(user=user,
+        UserData.objects.create(username='Borys',
                                 surname="Bardysh",
+                                email='borys.bardysh@synergy-way.com',
                                 bio="Developer at synergy-way",
                                 birth_date="1990-11-06",
                                 jabber="bobbard@42cc.co",
