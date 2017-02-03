@@ -9,15 +9,14 @@ class HomeView(View):
     def get_user_data(self):
         userdata = UserData.objects.get_or_create(
             username='Borys',
-            surname="Bardysh",
+            surname='Bardysh',
             email='borys.bardysh@synergy-way.com',
-            bio="Developer at synergy-way",
-            birth_date="1990-11-06",
-            jabber="bobbard@42cc.co",
-            skype="id",
-            other_contacts="")[0]
-        result = model_to_dict(userdata)
-        return result
+            bio='Developer at synergy-way',
+            birth_date='1990-11-06',
+            jabber='bobbard@42cc.co',
+            skype='id',
+            other_contacts='')[0]
+        return model_to_dict(userdata)
 
     def get(self, request):
         result = self.get_user_data()
